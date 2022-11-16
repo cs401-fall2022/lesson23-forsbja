@@ -6,3 +6,29 @@ body {
 a {
   color: #00B7FF;
 }
+
+.sticky {
+	background-color: #ffffff;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}
+
+
+.list-inline {
+	list-style: none;
+	margin-left: -0.5em;
+	margin-right: -0.5em;
+	padding: 0;
+}
+
+.list-inline > li {
+	display: inline-block;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+}
+
+.list-inline > li:before {
+	content: "\200B"; 
+	position: absolute; 
+}

@@ -6,59 +6,75 @@
         <title>{{title}}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="/stylesheets/style.css">
     </head>
     <body>
-        <h1>Blogging Out of My Gourd</h1>
+        <nav class="sticky">
+            <ul class ="list-inline">
+                <li><A href="#header">Home</a></li>
+                <li><A href="#feed">Activity Feed</a></li>
+                <li><a href="#add">Post</a></li>
+                <li><a href="#edit">Edit</a></li>
+                <li><a href="#delete">Delete</a></li>
+        </nav>
+
+        <h1 id="header">Blogging Out of My Gourd</h1>
         <img src="\images\gourd.jpg">
-        <h2>Activity Feed</h2>
-        <ul>
-            {% for txt in data%}
-            <ul>{{txt.blog_id}} - {{txt.blog_txt}}  </ul>
-            {% endfor%}
-        </ul>
+
+        <section id="feed">
+            <h2>Activity Feed</h2>
+            <ul>
+                {% for txt in data%}
+                <ul>{{txt.blog_id}} - {{txt.blog_txt}}  </ul>
+                {% endfor%}
+            </ul>
+        <section>
 
         <hr>
-        <h2>Share Your Thoughts</h2>
-        <form action="/add" method="POST">
-            <div>
-                <label for="blog">What is your blog txt?</label>
-                <input name="blog" id="blog" value="Hi this is my blog text!" />
-            </div>
-            <div>
-                <label for="blog">What is your name?</label>
-                <input name="blogName" id="blogName" value="Su nombre aqui!" />
-            </div>
-            <div>
-                <button>Send my blog</button>
-            </div>
-        </form>
+        <section id="add">
+            <h2>Share Your Thoughts</h2>
+            <form action="/add" method="POST">
+                <div>
+                    <label for="blog">What is your blog txt?</label>
+                    <input name="blog" id="blog" value="Hi this is my blog text!" />
+                </div>
+                <div>
+                    <button>Send my blog</button>
+                </div>
+            </form>
+        </section>
         <hr>
-        <h2>Regret Your Words?</h2>
-                <form action="/edit" method="POST">
-            <div>
-                <label for="blog">Post to update?</label>
-                <input name="blogID" id="blogID" value="1" />
-            </div>
-            <div>
-                <label for="blog">Post to Update?</label>
-                <input name="blogContent" id="blogContent" value="New blog text!" />
-            </div>
-            <div>
-                <button>update my blog</button>
-            </div>
-        </form>
+        
+        <section id="edit">
+            <h2>Regret Your Words?</h2>
+                    <form action="/edit" method="POST">
+                <div>
+                    <label for="blog">Post to update?</label>
+                    <input name="blogID" id="blogID" value="1" />
+                </div>
+                <div>
+                    <label for="blog">Post to Update?</label>
+                    <input name="blogContent" id="blogContent" value="New blog text!" />
+                </div>
+                <div>
+                    <button>update my blog</button>
+                </div>
+            </form>
+        </section>
         <hr>
-        <h2>Make Your Thoughts Disappear</h2>
-                <form action="/delete" method="POST">
-            <div>
-                <label for="blog">Blog to delete?</label>
-                <input name="blog" id="blog" value="1" />
-            </div>
-            <div>
-                <button>delete my blog</button>
-            </div>
-        </form>
+
+        <section id="delete">
+            <h2>Make Your Thoughts Disappear</h2>
+                    <form action="/delete" method="POST">
+                <div>
+                    <label for="blog">Blog to delete?</label>
+                    <input name="blog" id="blog" value="1" />
+                </div>
+                <div>
+                    <button>delete my blog</button>
+                </div>
+            </form>
+        <section>
         
     </body>
 </html>

@@ -50,7 +50,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/add', (req, res, next) => {
-  console.log("Adding blog to table WITH sanitizing input! YOLO BABY!!");
+  console.log("Adding new entry to table:");
   var db = new sqlite3.Database('mydb.sqlite3',
     sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE,
     (err) => {
@@ -68,8 +68,8 @@ router.post('/add', (req, res, next) => {
   );
 })
 
-router.post('/delete', (req, res, next) => {
-  console.log("deleting stuff WITH checking if it is valid! SEND IT!");
+router.post('/edit', (req, res, next) => {
+  console.log("Updating existing entry:");
   var db = new sqlite3.Database('mydb.sqlite3',
     sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE,
     (err) => {
@@ -77,7 +77,26 @@ router.post('/delete', (req, res, next) => {
         console.log("Getting error " + err);
         exit(1);
       }
-      console.log("inserting " + req.body.blog);
+      console.log("changing " + req.body.blogID + " to "+ req.body.blogContent);
+      //Sanitized statements
+      var stmt = db.prepare("update blog set blog_txt = ? where blog_id = ?")
+      stmt.run(req.body.blogContent,req.body.blogID);
+      stmt.finalize();
+      res.redirect('/');
+    }
+  );
+})
+
+router.post('/delete', (req, res, next) => {
+  console.log("deleting entry:");
+  var db = new sqlite3.Database('mydb.sqlite3',
+    sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE,
+    (err) => {
+      if (err) {
+        console.log("Getting error " + err);
+        exit(1);
+      }
+      console.log("Removing: " + req.body.blog);
       //Sanitized statements
       var stmt = db.prepare('delete from blog where blog_id=?')
       stmt.run(req.body.blog);
