@@ -1,19 +1,123 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0%;
 }
 
 a {
-  color: #00B7FF;
+  color: #66b4e7;
+  text-decoration: none;
+  border: #66b4e7 1px solid;
+  padding: 10px;
 }
 
+a:hover {
+	background-color: #66b4e7;
+	color: white;
+	border: 1px solid #66b4e7;
+}
+
+.header {
+	font-size: 32px;
+	background-color: #66b4e7;
+	margin: 0;
+	padding: 50px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	border-radius: 0px;
+	max-width: 100%;
+	color: white;
+	text-shadow: 2px 2px #ffffff3d;
+	border: none;
+}
+
+img {
+	margin-left: 50px;
+	max-width: 75%;
+	border: 1px #66b4e7 solid;
+	box-shadow: 0px 2px 2px #66b4e7, 1px 1px 5px #66b4e7;
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+	border-radius: 30px;
+	margin-bottom: 20px;
+	
+}
+
+section {
+	margin-left: 50px;
+	background-color: #DDEEF4;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    border: 1px solid #DDEEF4;
+    border-radius: 30px;
+    box-shadow: 0px 2px 2px #aac6eb, 0px 0px 5px #aac6eb;
+    margin-bottom: 20px;
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section h2 {
+	font-size: 25px;
+}
+
+section ul {
+	font-size: 20px;
+	margin: 5px;
+	
+}
+
+form label {
+	width: 30%;
+	font-size: 20px;
+}
+
+form input {
+ 	box-sizing: border-box;
+   	width: 70%;
+   	padding: 10px;
+   	border: 1px solid #aaa;
+   	border-radius: 4px;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+
+.button {
+	transition-duration: 0.4s;
+	background-color: #66b4e7; /* Green */
+  	border: none;
+  	color: white;
+  	padding: 15px 32px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 16px;
+}
+  
+.button:hover {
+	background-color: white;
+	color: black;
+	border: 1px solid #66b4e7;
+}
+
+.buttCenter {
+	text-align: center;
+}
+
+/* Nav Styling */
 .sticky {
 	background-color: #ffffff;
 	position: -webkit-sticky;
 	position: sticky;
 	top: 0;
+	border-bottom: 3px solid #66b4e7;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 50px;
+	margin-bottom: 10px;
 }
-
 
 .list-inline {
 	list-style: none;
@@ -26,9 +130,11 @@ a {
 	display: inline-block;
 	margin-left: 0.5em;
 	margin-right: 0.5em;
+	font-size: larger;
 }
 
 .list-inline > li:before {
 	content: "\200B"; 
 	position: absolute; 
 }
+
