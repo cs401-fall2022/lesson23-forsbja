@@ -49,6 +49,7 @@ router.get('/', function (req, res, next) {
     });
 });
 
+//DB Add function
 router.post('/add', (req, res, next) => {
   console.log("Adding new entry to table:");
   var db = new sqlite3.Database('mydb.sqlite3',
@@ -68,6 +69,7 @@ router.post('/add', (req, res, next) => {
   );
 })
 
+//DB Edit function
 router.post('/edit', (req, res, next) => {
   console.log("Updating existing entry:");
   var db = new sqlite3.Database('mydb.sqlite3',
@@ -87,6 +89,7 @@ router.post('/edit', (req, res, next) => {
   );
 })
 
+//DB Delete function
 router.post('/delete', (req, res, next) => {
   console.log("deleting entry:");
   var db = new sqlite3.Database('mydb.sqlite3',
