@@ -31,7 +31,10 @@
             <h2>Activity Feed</h2>
             <ul>
                 {% for txt in data%}
-                <ul>{{txt.blog_id}}) {{txt.blog_txt}}  </ul><hr>
+                <section class="postBox">
+                    {{txt.blog_txt}} <br><hr>
+                    <div class="identifiers">Post ID: {{txt.blog_id}} | Posted by: {{txt.blog_username}} <div>
+                </section>
                 {% endfor%}
             </ul>
         </section>
@@ -41,8 +44,12 @@
             <h2>Share Your Thoughts</h2>
             <form action="/add" method="POST">
                 <div>
+                    <label for="blogName">Username:</label>
+                    <input name="blogName" id="blogName" value="Anonymous" />
+                </div>
+                <div>
                     <label for="blog">Blog Content:</label>
-                    <input name="blog" id="blog" value="Hi this is my blog text!" />
+                    <textarea name="blog" id="blog" rows="4" cols="50" />Hi this is my blog text!</textarea>
                 </div>
                 <div class="buttCenter">
                     <button class="button">Send my blog</button>
@@ -59,8 +66,8 @@
                     <input name="blogID" id="blogID" value="1" />
                 </div>
                 <div>
-                    <label for="blog">New Content:</label>
-                    <input name="blogContent" id="blogContent" value="New blog text!" />
+                    <label for="blogContent">New Content:</label>
+                    <textarea name="blogContent" id="blogContent" rows="4" cols="50" />New blog text!</textarea>
                 </div>
                 <div class="buttCenter">
                     <button class="button">Update my blog</button>

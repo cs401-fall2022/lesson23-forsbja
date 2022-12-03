@@ -1,13 +1,3 @@
-// var express = require('express');
-// var router = express.Router();
-
-// /* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
-
-// module.exports = router;
-
 
 var express = require('express');
 var router = express.Router();
@@ -27,7 +17,7 @@ router.get('/', function (req, res, next) {
         (err, rows) => {
           if (rows.length === 1) {
             console.log("Table exists!");
-            db.all(` select blog_id, blog_txt from blog`, (err, rows) => {
+            db.all(` select blog_id, blog_txt, blog_username from blog`, (err, rows) => {
               console.log("returning " + rows.length + " records");
               res.render('index', { title: 'Express', data: rows });
             });
@@ -35,12 +25,13 @@ router.get('/', function (req, res, next) {
             console.log("Creating table and inserting some sample data");
             db.exec(`create table blog (
                      blog_id INTEGER PRIMARY KEY AUTOINCREMENT,
-                     blog_txt text NOT NULL);
-                      insert into blog (blog_txt)
-                      values ('Golly gee I do love to blog for thee!'),
-                             ('Check out that gourd!');`,
+                     blog_txt text NOT NULL,
+                     blog_username text NOT NULL);
+                      insert into blog (blog_txt, blog_username)
+                      values ('Golly gee I do love to blog for thee!','John Smith'),
+                             ('Check out that gourd!','GourdLover');`,
               () => {
-                db.all(` select blog_id, blog_txt from blog`, (err, rows) => {
+                db.all(` select blog_id, blog_txt, blog_username from blog`, (err, rows) => {
                   res.render('index', { title: 'Express', data: rows });
                 });
               });
@@ -61,8 +52,8 @@ router.post('/add', (req, res, next) => {
       }
       console.log("inserting " + req.body.blog);
       //Sanitized statements
-      var stmt = db.prepare("insert into blog (blog_txt) values (?)")
-      stmt.run(req.body.blog);
+      var stmt = db.prepare("insert into blog (blog_txt, blog_username) values (?,?)")
+      stmt.run(req.body.blog,req.body.blogName);
       stmt.finalize();
       res.redirect('/');
     }

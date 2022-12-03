@@ -4,19 +4,6 @@ body {
   margin: 0%;
 }
 
-a {
-  color: #66b4e7;
-  text-decoration: none;
-  border: #66b4e7 1px solid;
-  padding: 10px;
-}
-
-a:hover {
-	background-color: #66b4e7;
-	color: white;
-	border: 1px solid #66b4e7;
-}
-
 .header {
 	font-size: 32px;
 	background-color: #66b4e7;
@@ -59,9 +46,20 @@ section {
     margin-right: auto;
 }
 
+.postBox {
+	padding-top: 20px;
+	max-width: 95%;
+	background-color: white;
+}
+
+.identifiers {
+	font-size: 10pt;
+}
+
 section h2 {
 	font-size: 25px;
 }
+
 
 section ul {
 	font-size: 20px;
@@ -76,18 +74,30 @@ form label {
 
 form input {
  	box-sizing: border-box;
-   	width: 70%;
+   	width: 90%;
    	padding: 10px;
    	border: 1px solid #aaa;
    	border-radius: 4px;
 	margin-bottom: 10px;
 	font-size: 20px;
+	padding-left: 20px;
+}
+
+textarea {
+	box-sizing: border-box;
+   	width: 90%;
+   	padding: 10px;
+   	border: 1px solid #aaa;
+   	border-radius: 4px;
+	margin-bottom: 10px;
+	font-size: 20px;
+	padding-left: 20px;
 }
 
 .button {
 	transition-duration: 0.4s;
-	background-color: #66b4e7; /* Green */
-  	border: none;
+	background-color: #66b4e7;
+	border: 1px solid #66b4e7;
   	color: white;
   	padding: 15px 32px;
   	text-align: center;
@@ -137,4 +147,17 @@ form input {
 	content: "\200B"; 
 	position: absolute; 
 }
+
+a {
+	color: #66b4e7;
+	text-decoration: none;
+	border: #66b4e7 1px solid;
+	padding: 10px;
+  }
+  
+  a:hover {
+	  background-color: #66b4e7;
+	  color: white;
+	  border: 1px solid #66b4e7;
+  }
 
