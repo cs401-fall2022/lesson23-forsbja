@@ -1,7 +1,7 @@
 # Retrospective
 
-- name: Jane Doe
-- email: janedoe@u.boisestate.edu
+- name: Jake Forsberg
+- email: jakeforsberg@u.boisestate.edu
 
 ## Instructions
 
@@ -21,12 +21,19 @@ Be safe CITE!
 
 ## Experience
 
-TODO
+After playing around with express and the sqlite3 db from the last lab, it wasn't too hard to build on for the final project.
+Everything was pretty simple to get done as it was mostly just modifying sql statements to fit with adding a username
+section to the blog to track that, so tweaking the table creation and outputs to accommodate the new table column wasn't oo bad.
+Adding update functionality to existing posts also wasn't that difficult to kind of follow the template and add a new
+sql statement to do that. The HTML and CSS also were pretty simple and fun to go through, trying to make the posts themselves
+look a bit better and all the input sections was pretty fun and I enjoyed making it my own. Overall I was able to get the whole
+thing done and I felt pretty prepared from all the work we've done before to do it relatively easily. The only few setbacks
+I had was forgetting to change a select statement to display the usernames, which I found pretty quickly so no real difficulties.
 
 ## Known issues or Bugs
 
-TODO
+NONE
 
 ## Sources used
 
-TODO
+NONE
